@@ -1,0 +1,102 @@
+EXERCITANDO
+
+01 - escola e departamentos:		composição/agregação
+02 - carrinho de compras e produtos:	composição/agregação
+03 - coleção e revistas:		composição/agregação
+04 - usuário e comunidades:		composição/agregação
+05 - cliente e pets:			composição/agregação
+06 - consulta e pet:			composição/agregação
+07 - sócio e empréstimo:		composição/agregação
+     empréstimo e livro:		composição/agregação
+08 - transação bancária tem uma data:	associação
+09 - cliente tem endereço:		associação
+10 - livro e editora:			associação
+11 - carro e cor (atributo):		relacionameno de uso com o String (cor)
+12 - pessoa e peso (atributo):		não existe
+13 - conta e cliente: associação
+
+====================================================
+
+     public class Pessoa {
+	private String nome;
+	private Endereco endereco;
+	private Data dataNascimento;
+	private double peso;		(peso não é classe, é atributo de uma classe)
+     }
+
+     public class Endereco {
+	private String logradouro;
+	private String cep;
+	private String bairro;
+	private int numero;
+     }
+
+====================================================
+
+     public class Carrinho {
+	private Data data;
+	private Produto[] produtos;
+
+	public void setProduto(Produto[] produtos) {
+	    this.produtos = produtos;
+	}
+
+	public double calculaTotal() {
+	    double total = 0.0;
+
+	    for(i=0; i < produtos.lenght; i++) {
+		total = total + produtos[i].getValor();
+	    }
+	}
+
+	public void info() {
+	    for(i=0; i < produtos.lenght; i++) {
+		System.out.println("Nome do produto: ", this.produto[i].getDescricao());
+		System.out.println("Valor do produto: ", this.produto[i].getValor());
+	    }
+
+	    System.out.println("Valor toal da compra: ", this.calculaTotal());
+	}
+     }
+
+     public class Produto {
+	private String descricao;
+	private double valor;
+
+	public Produto(String descricao, double valor) {
+	    this.descricao = descricao;
+	    this.valor = valor;
+	}
+
+	//Gets e Sets
+
+     }
+
+     public class Loja {
+	
+	public static void main(String[] args) {
+	    int numeroProdutos = 3;
+	    Produto[] produtos = new Produto[numeroProdutos];
+	    String descricao;
+	    double valor;
+	    Scanner sc = new Scanner(System.in);
+	    Carriho carrinho = new Carrinho();
+	    Carriho outroCarrinho = new Carrinho();
+
+	    for (int i=0; i < produtos.lenght; i++){
+		System.out.println("Nome do produto: ");
+		descricao = sc.nextLine();
+		System.out.println("Valor do produto: ");
+		valor = sc.nestDouble();
+		produtos[i] = new Produto(descricao, valor);
+	    }
+
+	    produtos[1] = new Produto("Borracha", 1.50);
+	    produtos[2] = new Produto("Caderno", 10.0);
+	    produtos[3] = new Produto("Caneta", 2.99);
+
+	    carrinho.setProduto(produtos);
+	    double total = carrinho.calculaTotal();
+	    carrinho.info();
+	}
+     }

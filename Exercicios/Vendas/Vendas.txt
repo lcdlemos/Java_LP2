@@ -1,0 +1,24 @@
+Hoje falamos sobre herança, ligação estática e dinâmica, sobrescrita de métodos, além da criação de arrays dinâmicos em Java.
+Para fixar o que discutimos, anexei as classes implementadas em sala, porém estão incompletas.
+
+
+Como exercício, complementem as classes com o que é solicitado a seguir:
+
+
+
+1 - Implementem um construtor para a classe Venda
+
+
+2 - Sobrescrevam o método public String toString() em Venda para que ele:
+     - Apresente a data da venda
+     - Apresente os produtos que compõem a venda com sua descrição e valor
+     - Apresente o total da venda
+
+
+3 - Na classe Caixa, crie uma Venda, inclua produtos nessa Venda e apresente o total da Venda
+
+
+4 - Crie objetos do tipo VendaPrazo e VendaVista na classe Caixa e observe o comportamento dos métodos getTotal() e toString() de ambas as classes.
+
+
+Anotem as dúvidas para discutirmos na próxima aula.
